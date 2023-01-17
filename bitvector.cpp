@@ -41,6 +41,7 @@ void skt::BitVector::set(const std::size_t index, const bool value) {
         if (index <= m_size) {
             if (value) {
                 // index/BITS_COUNT will show position of the array
+                // index%SIZE will show the position of the bit
                 m_ptr[index / BITS_COUNT] ^= (BIT_ONE << (index % m_size)); // set bit to ONE
             }
             else {
